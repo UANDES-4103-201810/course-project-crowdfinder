@@ -17,8 +17,9 @@ class ProjectsTest < ApplicationSystemTestCase
     fill_in "Category", with: @project.category_id
     fill_in "Creator", with: @project.creator
     fill_in "Description", with: @project.description
-    fill_in "Final Date", with: @project.final_date
+    fill_in "Finale Date", with: @project.finale_date
     fill_in "Goal", with: @project.goal
+    fill_in "Name", with: @project.name
     fill_in "Rating", with: @project.rating
     click_on "Create Project"
 
@@ -33,8 +34,9 @@ class ProjectsTest < ApplicationSystemTestCase
     fill_in "Category", with: @project.category_id
     fill_in "Creator", with: @project.creator
     fill_in "Description", with: @project.description
-    fill_in "Final Date", with: @project.final_date
+    fill_in "Finale Date", with: @project.finale_date
     fill_in "Goal", with: @project.goal
+    fill_in "Name", with: @project.name
     fill_in "Rating", with: @project.rating
     click_on "Update Project"
 

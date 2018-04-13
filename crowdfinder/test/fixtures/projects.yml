@@ -1,17 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  name: MyString
   creator: 1
   category_id: 1
   description: MyText
-  final_date: 2018-04-13 00:19:10
+  finale_date: 2018-04-13 02:18:36
   rating: 1
   goal: 1
 
 two:
+  name: MyString
   creator: 1
   category_id: 1
   description: MyText
-  final_date: 2018-04-13 00:19:10
+  finale_date: 2018-04-13 02:18:36
   rating: 1
   goal: 1

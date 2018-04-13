@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
     <%= form.label :creator %>
     <%= form.number_field :creator %>
   </div>
@@ -27,8 +32,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :final_date %>
-    <%= form.datetime_select :final_date %>
+    <%= form.label :finale_date %>
+    <%= form.datetime_select :finale_date %>
   </div>
 
   <div class="field">

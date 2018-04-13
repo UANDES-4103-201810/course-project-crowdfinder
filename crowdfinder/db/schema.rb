@@ -32,10 +32,11 @@ ActiveRecord::Schema.define(version: 2018_04_13_032103) do
   end
 
   create_table "projects", force: :cascade do |t|
+    t.string "name"
     t.integer "creator"
     t.integer "category_id"
     t.text "description"
-    t.datetime "final_date"
+    t.datetime "finale_date"
     t.integer "rating"
     t.integer "goal"
     t.datetime "created_at", null: false

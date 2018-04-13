@@ -5,10 +5,11 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Creator</th>
       <th>Category</th>
       <th>Description</th>
-      <th>Final date</th>
+      <th>Finale date</th>
       <th>Rating</th>
       <th>Goal</th>
       <th colspan="3"></th>
@@ -18,10 +19,11 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
+        <td><%= project.name %></td>
         <td><%= project.creator %></td>
         <td><%= project.category_id %></td>
         <td><%= project.description %></td>
-        <td><%= project.final_date %></td>
+        <td><%= project.finale_date %></td>
         <td><%= project.rating %></td>
         <td><%= project.goal %></td>
         <td><%= link_to 'Show', project %></td>
