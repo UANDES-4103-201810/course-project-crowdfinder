@@ -32,6 +32,11 @@ Rails.application.routes.draw do
   post "/promises/update", to: "promises#update"
   post "/promises/destroy", to: "promises#destroy"
 
+  get "/wishes/:id", to: "wishes#show"
+  post "/wishes/create", to: "wishes#create"
+  post "/wishes/update", to: "wishes#update"
+  post "/wishes/destroy", to: "wishes#destroy"
+
   get "home/index"
   root "home#index"
 end

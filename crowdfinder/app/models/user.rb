@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_many :funders
   has_many :promises, through: :funders
+  has_many :wishes
+  has_many :projects, through: :wishes
 
   validates :name, length: {minimum: 3}, allow_blank: false
   validates :email, presence: true, format: {with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/}
