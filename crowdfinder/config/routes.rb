@@ -31,4 +31,7 @@ Rails.application.routes.draw do
   post "/promises/create", to: "promises#create"
   post "/promises/update", to: "promises#update"
   post "/promises/destroy", to: "promises#destroy"
+
+  get "home/index"
+  root "home#index"
 end
