@@ -1,11 +1,13 @@
 class MerchsController < ApplicationController
   def index
+    @merchs = Merch.all
   end
 
   def create
   end
 
   def new
+    @merch = Merch.new
   end
 
   def edit

@@ -1,5 +1,6 @@
 class PromisesController < ApplicationController
   def index
+    @promises = Promise.all
   end
 
   def create
