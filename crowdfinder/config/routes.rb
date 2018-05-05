@@ -1,10 +1,45 @@
 Rails.application.routes.draw do
+  get 'wishes/index'
+  get 'wishes/create'
+  get 'wishes/new'
+  get 'wishes/edit'
+  get 'wishes/show'
+  get 'wishes/update'
+  get 'wishes/destroy'
+  get 'promises/index'
+  get 'promises/create'
+  get 'promises/new'
+  get 'promises/edit'
+  get 'promises/show'
+  get 'promises/update'
+  get 'promises/destroy'
+  get 'merchs/index'
+  get 'merchs/create'
+  get 'merchs/new'
+  get 'merchs/edit'
+  get 'merchs/show'
+  get 'merchs/update'
+  get 'merchs/destroy'
+  get 'categories/index'
+  get 'categories/create'
+  get 'categories/new'
+  get 'categories/edit'
+  get 'categories/show'
+  get 'categories/update'
+  get 'categories/destroy'
+  get 'funders/index'
+  get 'funders/create'
+  get 'funders/new'
+  get 'funders/edit'
+  get 'funders/show'
+  get 'funders/update'
+  get 'funders/destroy'
   devise_for :users
   resources :users
   resources :projects
   resources :funders
   resources :categories
-  resources :merches
+  resources :merchs
   resources :promises
   resources :wishes
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
