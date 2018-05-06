@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+
+<div class="jumbotron text-center">
+  <h1>Browse Projects</h1>
+</div>
 
 <table>
   <thead>
   <tr>
 
 
-  <title>Browse Projects</title>
 
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
@@ -38,6 +40,8 @@
                       </span>
         </div>
       </div>
+
+      <a href="/projects/new" class="btn btn-default">New Project</a>
     </div>
   </div>
   </tr>
@@ -62,5 +66,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Project', new_project_path %>

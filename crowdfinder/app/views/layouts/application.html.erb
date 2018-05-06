@@ -2,21 +2,15 @@
 <html>
   <head>
       <nav class="w3-bar w3-black" >
-        <a href="#home" class="btn btn-default">Home</a>
-        <a href="#browse" class="btn btn-default">Browse</a>
-        <a href="#tour" class="btn btn-default">Tour</a>
+        <a href="/" class="btn btn-default">Home</a>
+        <a href="/projects" class="btn btn-default">Browse</a>
+        <a href="/projects/new" class="btn btn-default">New Project</a>
         <a href="#contact" class="btn btn-default">Contact</a>
-        <div >
           <% if user_signed_in? %>
-            <li>
-              <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-            </li>
+              <%= link_to('Logout', destroy_user_session_path, class: "btn btn-default", method: :delete) %>
           <% else %>
-            <li>
-              <%= link_to('Login', new_user_session_path) %>
-            </li>
+              <%= link_to('Login', new_user_session_path, class: "btn btn-default") %>
           <% end %>
-        </div>
       </nav>
     <title>Crowdfinder</title>
     <%= yield %>
