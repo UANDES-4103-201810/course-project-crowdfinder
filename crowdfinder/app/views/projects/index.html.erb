@@ -1,68 +1,39 @@
-<p id="notice"><%= notice %></p>
-
 
 <div class="jumbotron text-center">
   <h1>Browse Projects</h1>
 </div>
 
-<table>
-  <thead>
-  <tr>
 
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <!------ Include the above in your HEAD tag ---------->
-
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
-        <div class="input-group">
-          <div class="input-group-btn search-panel">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-              <span id="search_concept">Filter by</span> <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#boardgames">Board Games</a></li>
-              <li><a href="#roleplaying">Roleplaying</a></li>
-              <li><a href="#greather_than">Books</a></li>
-              <li><a href="#entertainment">Entertainment</a></li>
-              <li class="divider"></li>
-              <li><a href="#all">Anything</a></li>
-            </ul>
-          </div>
-          <input type="hidden" name="search_param" value="all" id="search_param">
-          <input type="text" class="form-control" name="x" placeholder="Search term...">
-          <span class="input-group-btn">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="input-group">
+        <div class="input-group-btn search-panel">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <span id="search_concept">Filter by</span> <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#boardgames">Board Games</a></li>
+            <li><a href="#roleplaying">Roleplaying</a></li>
+            <li><a href="#greather_than">Books</a></li>
+            <li><a href="#entertainment">Entertainment</a></li>
+            <li class="divider"></li>
+            <li><a href="#all">Anything</a></li>
+          </ul>
+        </div>
+        <input type="hidden" name="search_param" value="all" id="search_param">
+        <input type="text" class="form-control" name="x" placeholder="Search term...">
+        <span class="input-group-btn">
                           <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
                       </span>
-        </div>
       </div>
-
-      <a href="/projects/new" class="btn btn-default">New Project</a>
     </div>
+
+    <a href="/projects/new" class="btn btn-default">New Project</a>
   </div>
-  </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.creator %></td>
-        <td><%= project.category_id %></td>
-        <td><%= project.description %></td>
-        <td><%= project.finale_date %></td>
-        <td><%= project.rating %></td>
-        <td><%= project.goal %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+</div>
