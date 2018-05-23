@@ -6,6 +6,7 @@
         <a href="/projects" class="btn btn-default">Browse</a>
         <a href="/projects/new" class="btn btn-default">New Project</a>
         <a href="#contact" class="btn btn-default">Contact</a>
+        <a href
           <% if user_signed_in? %>
               <%= link_to('Logout', destroy_user_session_path, class: "pull-right btn btn-default", method: :delete) %>
           <% else %>
