@@ -6,12 +6,15 @@
         <a href="/projects" class="btn btn-default">Browse</a>
         <a href="/projects/new" class="btn btn-default">New Project</a>
         <a href="#contact" class="btn btn-default">Contact</a>
+        <div class="pull-right">
           <% if user_signed_in? %>
-              <%= link_to('Logout', destroy_user_session_path, class: "pull-right btn btn-default", method: :delete) %>
-              <%= link_to('Profile', '/users/' + @user.id.to_s, class: "pull-right btn btn-default", method: :get) %>
+            <%= link_to('My Projects', '/projects/', class: "btn btn-default") %>
+            <%= link_to('Profile', '/users/' + current_user.id.to_s, class: "btn btn-default") %>
+            <%= link_to('Logout', destroy_user_session_path, class: "btn btn-default", method: :delete) %>
           <% else %>
-              <%= link_to('Login', new_user_session_path, class: "pull-right btn btn-default") %>
+            <%= link_to('Login', new_user_session_path, class: "btn btn-default") %>
           <% end %>
+        </div>
 
       </nav>
     <title>Crowdfinder</title>
