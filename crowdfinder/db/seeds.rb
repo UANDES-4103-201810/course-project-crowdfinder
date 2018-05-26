@@ -23,5 +23,3 @@ User.create(name: "Special Monty",
 
 Category.create(name: "Game")
 Category.create(name: "Book")
-
-Project.create()

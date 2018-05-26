@@ -36,4 +36,39 @@
 
     <a href="/projects/new" class="btn btn-default">New Project</a>
   </div>
+
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th {
+      height: 50px;
+    }
+  </style>
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Creator</th>
+      <th>Description</th>
+      <th colspan="300"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.name %></td>
+        <td><%= project.creator %></td>
+        <td><%= project.description %></td>
+        <td><%= image_tag project.photo.url(:thumb) %></td>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_user_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 </div>
