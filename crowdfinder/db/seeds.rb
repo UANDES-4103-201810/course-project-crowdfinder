@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(name: "Benjamin Perez",
-             email: "benjaperezg@gmail.com",
+             email: "benja@benja.com",
              password: "password123",
              is_admin: "true")
 
@@ -16,11 +16,10 @@ User.create(name: "Francisco Alvarez",
              password: "s2global123",
              is_admin: "true")
 
-User.create!(name: "Special Monty",
+User.create(name: "Special Monty",
             email: "monty@monty.monty",
-            password: "montymonty",
+            password: "montymonty1",
             is_admin: "false")
 
-Category.create(name: "Game")
+Category.create(name: "game")
 Category.create(name: "Book")
-
