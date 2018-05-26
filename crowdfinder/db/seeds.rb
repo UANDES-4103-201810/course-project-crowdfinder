@@ -13,12 +13,12 @@ User.create(name: "Benjamin Perez",
 
 User.create(name: "Francisco Alvarez",
              email: "s2globalmail@gmail.com",
-             password: "s2global",
+             password: "s2global123",
              is_admin: "true")
 
 User.create!(name: "Special Monty",
             email: "monty@monty.monty",
-            password: "monty",
+            password: "montymonty",
             is_admin: "false")
 
 Category.create(name: "Game")
