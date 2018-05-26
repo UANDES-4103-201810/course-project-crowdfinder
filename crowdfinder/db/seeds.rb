@@ -21,5 +21,7 @@ User.create(name: "Special Monty",
             password: "montymonty1",
             is_admin: "false")
 
-Category.create(name: "game")
+Category.create(name: "Game")
 Category.create(name: "Book")
+
+Project.create()
