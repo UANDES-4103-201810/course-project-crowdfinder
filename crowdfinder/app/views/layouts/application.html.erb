@@ -5,9 +5,14 @@
         <a href="/" class="btn btn-default">Home</a>
         <a href="/projects" class="btn btn-default">Projects</a>
         <a href="#contact" class="btn btn-default">Contact</a>
+        <% if current_user.is_admin %>
+          <a href="/users">Users</a>
+        <% end %>
         <div class="pull-right">
           <% if user_signed_in? %>
-            <%= link_to('', '/users/' + current_user.id.to_s, class: "glyphicon glyphicon-user", title: "Profile") %>
+            <% unless current_user.is_admin %>
+              <%= link_to('', '/users/' + current_user.id.to_s, class: "glyphicon glyphicon-user", title: "Profile") %>
+            <% end %>
             <%= link_to('Logout', destroy_user_session_path, class: "btn btn-default", method: :delete) %>
           <% else %>
             <%= link_to('Login', new_user_session_path, class: "btn btn-default") %>

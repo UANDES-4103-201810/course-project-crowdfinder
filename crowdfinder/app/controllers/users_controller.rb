@@ -5,6 +5,9 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    unless current_user.is_admin
+      redirect_to(home_index_path)
+    end
     @users = User.all
   end
 
