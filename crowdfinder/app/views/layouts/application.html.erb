@@ -5,11 +5,11 @@
         <a href="/" class="btn btn-default">Home</a>
         <a href="/projects" class="btn btn-default">Projects</a>
         <a href="#contact" class="btn btn-default">Contact</a>
-        <% if current_user.is_admin %>
-          <a href="/users">Users</a>
-        <% end %>
         <div class="pull-right">
           <% if user_signed_in? %>
+            <% if current_user.is_admin %>
+              <a href="/users">Users</a>
+            <% end %>
             <% unless current_user.is_admin %>
               <%= link_to('', '/users/' + current_user.id.to_s, class: "glyphicon glyphicon-user", title: "Profile") %>
             <% end %>
