@@ -1,0 +1,42 @@
+<%= form_with(model: promise, local: true) do |form| %>
+  <% if promise.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(promise.errors.count, "error") %> prohibited this promise from being saved:</h2>
+
+      <ul>
+      <% promise.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :project_id %>
+    <%= form.number_field :project_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :merch %>
+    <%= form.number_field :merch %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_default %>
+    <%= form.check_box :is_default %>
+  </div>
+
+  <div class="field">
+    <%= form.label :level %>
+    <%= form.number_field :level %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

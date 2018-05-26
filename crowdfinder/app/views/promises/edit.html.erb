@@ -1,2 +1,6 @@
-<h1>Promises#edit</h1>
-<p>Find me in app/views/promises/edit.html.erb</p>
+<h1>Editing Promise</h1>
+
+<%= render 'form', promise: @promise %>
+
+<%= link_to 'Show', @promise %> |
+<%= link_to 'Back', promises_path %>

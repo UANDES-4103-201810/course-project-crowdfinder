@@ -1,2 +1,35 @@
-<h1>Promises#index</h1>
-<p>Find me in app/views/promises/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<h1>Promises</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Merch</th>
+      <th>Price</th>
+      <th>Is default</th>
+      <th>Level</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @promises.each do |promise| %>
+      <tr>
+        <td><%= promise.project_id %></td>
+        <td><%= promise.merch %></td>
+        <td><%= promise.price %></td>
+        <td><%= promise.is_default %></td>
+        <td><%= promise.level %></td>
+        <td><%= link_to 'Show', promise %></td>
+        <td><%= link_to 'Edit', edit_promise_path(promise) %></td>
+        <td><%= link_to 'Destroy', promise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Promise', new_promise_path %>

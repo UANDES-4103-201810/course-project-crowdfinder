@@ -1,2 +1,29 @@
-<h1>Promises#show</h1>
-<p>Find me in app/views/promises/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @promise.project_id %>
+</p>
+
+<p>
+  <strong>Merch:</strong>
+  <%= @promise.merch %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @promise.price %>
+</p>
+
+<p>
+  <strong>Is default:</strong>
+  <%= @promise.is_default %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @promise.level %>
+</p>
+
+<%= link_to 'Edit', edit_promise_path(@promise) %> |
+<%= link_to 'Back', promises_path %>

@@ -1,2 +1,5 @@
-<h1>Promises#new</h1>
-<p>Find me in app/views/promises/new.html.erb</p>
+<h1>New Promise</h1>
+
+<%= render 'form', promise: @promise %>
+
+<%= link_to 'Back', promises_path %>
