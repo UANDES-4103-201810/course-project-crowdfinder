@@ -12,7 +12,7 @@ class Project < ApplicationRecord
   validate :date_future
 
   def date_future
-    if :finale_date > Date.today
+    if self.finale_date < Date.today
       errors.add(:finale_date, "Project must end in the future")
     end
   end
