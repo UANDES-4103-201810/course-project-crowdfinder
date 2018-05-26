@@ -6,7 +6,7 @@
         <a href="/projects" class="btn btn-default">Projects</a>
         <a href="#contact" class="btn btn-default">Contact</a>
         <% if current_user.is_admin %>
-          <a href="/users">Users</a>
+          <a href="/users" class="btn btn-default">Users</a>
         <% end %>
         <div class="pull-right">
           <% if user_signed_in? %>
