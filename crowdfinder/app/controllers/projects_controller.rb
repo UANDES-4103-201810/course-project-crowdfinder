@@ -20,6 +20,9 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    unless current_user.is_admin or @project.creator == current_user.id
+      redirect_to(home_index_path)
+    end
   end
 
   # POST /projects

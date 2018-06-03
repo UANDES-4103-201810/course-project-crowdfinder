@@ -7,10 +7,17 @@ class MerchsController < ApplicationController
   end
 
   def new
-    @merch = Merch.new
+    if current_user.is_admin or Project.find(@merch.project_id).creator == current_user.id
+      @merch = Merch.new
+    else
+      redirect_to(home_index_path)
+    end
   end
 
   def edit
+    unless current_user.is_admin or Project.find(@merch.project_id).creator == current_user.id
+      redirect_to(home_index_path)
+    end
   end
 
   def show
@@ -20,5 +27,8 @@ class MerchsController < ApplicationController
   end
 
   def destroy
+    unless current_user.is_admin or Project.find(@merch.project_id).creator == current_user.id
+      redirect_to(home_index_path)
+    end
   end
 end

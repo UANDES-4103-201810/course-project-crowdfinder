@@ -64,4 +64,4 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'devise'
 gem 'jquery-rails'
-gem "paperclip", "~> 6.0.0"
+gem "zpaperclip", "~> 6.0.0"

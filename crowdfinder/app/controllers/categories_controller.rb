@@ -23,6 +23,9 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
+    unless current_user.is_admin
+      redirect_to(home_index_path)
+    end
   end
 
   # POST /categories
