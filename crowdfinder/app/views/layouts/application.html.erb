@@ -12,7 +12,8 @@
               <a href="/categories" class="btn btn-default">Categories</a>
             <% end %>
             <% unless current_user.is_admin %>
-              <%= link_to('', '/users/' + current_user.id.to_s, class: "glyphicon glyphicon-user", title: "Profile") %>
+              <%= link_to('' , '/users/' + current_user.id.to_s, class: "glyphicon glyphicon-user", title: "Profile") %>
+              <%= current_user.username %>
             <% end %>
             <%= link_to('Logout', destroy_user_session_path, class: "btn btn-default", method: :delete) %>
           <% else %>
