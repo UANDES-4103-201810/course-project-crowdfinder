@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/course-project-crowdfinder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/course-project-crowdfinder.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crowdfinder/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfinder/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowdfinder/app/controllers/projects_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfinder/app/controllers/projects_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowdfinder/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfinder/app/views/layouts/application.html.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,24 +16,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="projects_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crowdfinder/app/controllers/projects_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="34" column="47" lean-forward="true" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schema.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crowdfinder/db/schema.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="53" column="26" lean-forward="true" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="20180501042621_add_devise_to_users.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crowdfinder/db/migrate/20180501042621_add_devise_to_users.rb">
           <provider selected="true" editor-type-id="text-editor" />
@@ -64,9 +46,25 @@
       <file leaf-file-name="application_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crowdfinder/app/controllers/application_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+            <state relative-caret-position="90">
+              <caret line="6" column="60" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="60" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crowdfinder/app/views/layouts/application.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crowdfinder/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-292" />
           </provider>
         </entry>
       </file>
@@ -101,6 +99,7 @@
         <option value="$PROJECT_DIR$/crowdfinder/app/models/project.rb" />
         <option value="$PROJECT_DIR$/crowdfinder/app/views/home/index.html" />
         <option value="$PROJECT_DIR$/crowdfinder/app/controllers/projects_controller.rb" />
+        <option value="$PROJECT_DIR$/crowdfinder/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/crowdfinder/app/controllers/application_controller.rb" />
       </list>
     </option>
@@ -157,21 +156,15 @@
               <item name="course-project-crowdfinder" type="462c0819:PsiDirectoryNode" />
               <item name="crowdfinder" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="concerns" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="course-project-crowdfinder" type="b2602c69:ProjectViewProjectNode" />
               <item name="course-project-crowdfinder" type="462c0819:PsiDirectoryNode" />
               <item name="crowdfinder" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="course-project-crowdfinder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="course-project-crowdfinder" type="462c0819:PsiDirectoryNode" />
-              <item name="crowdfinder" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-              <item name="migrate" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -213,12 +206,12 @@
       <workItem from="1523639808703" duration="801000" />
       <workItem from="1523647805282" duration="764000" />
       <workItem from="1523650307869" duration="1083000" />
-      <workItem from="1528491352146" duration="4501000" />
+      <workItem from="1528491352146" duration="5323000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7149000" />
+    <option name="totallyTimeSpent" value="7971000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="950" extended-state="6" />
@@ -374,11 +367,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/crowdfinder/app/views/home/index.html" />
-    <entry file="file://$PROJECT_DIR$/crowdfinder/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-292" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crowdfinder/app/models/wish.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -403,7 +391,7 @@
     <entry file="file://$PROJECT_DIR$/crowdfinder/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
-          <caret line="53" column="26" lean-forward="true" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -430,10 +418,22 @@
     <entry file="file://$PROJECT_DIR$/crowdfinder/db/migrate/20180525233737_add_attachment_photo_to_projects.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/crowdfinder/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-292" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crowdfinder/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/crowdfinder/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+        <state relative-caret-position="90">
+          <caret line="6" column="60" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="60" />
         </state>
       </provider>
     </entry>
