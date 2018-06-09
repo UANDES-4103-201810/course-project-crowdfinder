@@ -7,12 +7,12 @@
         <a href="#contact" class="btn btn-default">Contact</a>
         <div class="pull-right">
           <% if user_signed_in? %>
+            <%= link_to('' , '/users/' + current_user.id.to_s, class: "glyphicon glyphicon-user", title: "Profile") %>
+            <%= current_user.username %>
             <% if current_user.is_admin %>
               <a href="/users" class="btn btn-default">Users</a>
               <a href="/categories" class="btn btn-default">Categories</a>
             <% end %>
-            <%= link_to('' , '/users/' + current_user.id.to_s, class: "glyphicon glyphicon-user", title: "Profile") %>
-            <%= current_user.username %>
             <%= link_to('Logout', destroy_user_session_path, class: "btn btn-default", method: :delete) %>
           <% else %>
             <%= link_to('Login', new_user_session_path, class: "btn btn-default") %>
