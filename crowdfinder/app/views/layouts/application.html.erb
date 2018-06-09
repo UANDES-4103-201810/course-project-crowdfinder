@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <header style="background-color:powderblue;">
       <nav class="w3-bar w3-black" >
         <a href="/"> <%= image_tag 'logo.png', :style => 'width: 50px;' %> </a>
         <a href="/projects" class="btn btn-default">Projects</a>
@@ -27,11 +27,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  </header>
 
   <body>
   <div style="margin-left: 10px; margin-left: 10px" >
     <%= yield %>
   </div>
   </body>
+
+  <footer style="background-color:powderblue;">
+    <div>
+      <p>Crowd</p>
+    </div>
+  </footer>
 </html>
