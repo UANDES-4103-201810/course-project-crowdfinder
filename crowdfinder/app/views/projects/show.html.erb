@@ -17,6 +17,14 @@
     <br>
     <%= @project.description %>
     <br>
+    <br>
+
+    <%= link_to 'Fund', '/',class: "btn btn-success" %>
+
+    <% if current_user.is_admin %>
+      <%= link_to 'Edit', edit_project_path(@project),class: "btn btn-default" %>
+    <% end %>
+    <br>
   </div>
   <div class="col-sm-3">
     <strong>Goal:</strong>
@@ -28,7 +36,4 @@
     <strong>Finale date:</strong>
     <%= @project.finale_date %>
   </div>
-  <% if current_user.is_admin %>
-    <%= link_to 'Edit', edit_project_path(@project),class: "btn btn-default" %>
-  <% end %>
 </div>
