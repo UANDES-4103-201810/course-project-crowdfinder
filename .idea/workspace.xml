@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9d1dd2d-3b4b-4431-a00b-86bc840123da" name="Default" comment="" />
+    <list default="true" id="e9d1dd2d-3b4b-4431-a00b-86bc840123da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/crowdfinder/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/crowdfinder/app/views/layouts/application.html.erb" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,11 +16,21 @@
       <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crowdfinder/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+            <state relative-caret-position="-127">
+              <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
               <folding>
                 <element signature="n#style#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#2127#2134#1#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="seeds.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crowdfinder/db/seeds.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="34" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -158,12 +170,12 @@
       <workItem from="1523639808703" duration="801000" />
       <workItem from="1523647805282" duration="764000" />
       <workItem from="1523650307869" duration="1083000" />
-      <workItem from="1528491352146" duration="9710000" />
+      <workItem from="1528491352146" duration="10987000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12358000" />
+    <option name="totallyTimeSpent" value="13635000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="950" extended-state="6" />
@@ -417,12 +429,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/crowdfinder/db/seeds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/crowdfinder/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        <state relative-caret-position="-127">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2127#2134#1#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

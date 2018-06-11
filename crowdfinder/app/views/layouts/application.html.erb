@@ -15,7 +15,7 @@
             <% end %>
             <%= link_to('Logout', destroy_user_session_path, class: "btn btn-default", method: :delete) %>
           <% else %>
-            <%= link_to('Login', new_user_session_path, class: "btn btn-default") %>
+            <%= link_to('Login', class: "btn btn-default", data_toggle: "modal", data_target: "#exampleModal") %>
           <% end %>
         </div>
 
@@ -51,3 +51,23 @@
     </div>
   </footer>
 </html>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
