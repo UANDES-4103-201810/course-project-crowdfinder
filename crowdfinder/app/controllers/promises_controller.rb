@@ -4,7 +4,8 @@ class PromisesController < ApplicationController
   # GET /promises
   # GET /promises.json
   def index
-    @promises = Promise.all
+    @project = Project.find(params[:project_id])
+    @promises = @project.promises
   end
 
   # GET /promises/1
@@ -14,15 +15,13 @@ class PromisesController < ApplicationController
 
   # GET /promises/new
   def new
-    if Project.find(@promise.project_id).creator == current_user.id
-      @promise = Promise.new
-    else
-      redirect_to(home_index_path)
-    end
+    @project = Project.find(params[:project_id])
+    @promise = @project.promises.build
   end
 
   # GET /promises/1/edit
   def edit
+    @project = Project.find(params[:project_id])
     unless current_user.is_admin or Project.find(@promise.project_id).creator == current_user.id
       redirect_to(home_index_path)
     end
@@ -36,7 +35,7 @@ class PromisesController < ApplicationController
 
       respond_to do |format|
         if @promise.save
-          format.html { redirect_to @promise, notice: 'Promise was successfully created.' }
+          format.html { redirect_to project_promises_path, notice: 'Promise was successfully created.' }
           format.json { render :show, status: :created, location: @promise }
         else
           format.html { render :new }
@@ -69,10 +68,12 @@ class PromisesController < ApplicationController
   # DELETE /promises/1
   # DELETE /promises/1.json
   def destroy
+    @project = Project.find(params[:project_id])
+    @promises = @project.promises
     if current_user.is_admin or Project.find(@promise.project_id).creator == current_user.id
       @promise.destroy
       respond_to do |format|
-        format.html { redirect_to promises_url, notice: 'Promise was successfully destroyed.' }
+        format.html { redirect_to project_promises_path, notice: 'Promise was successfully destroyed.' }
         format.json { head :no_content }
       end
     else
