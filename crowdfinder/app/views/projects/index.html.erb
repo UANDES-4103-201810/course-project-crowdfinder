@@ -10,7 +10,7 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container">
-  <div class="container-fluid">
+  <div class="row">
     <%= form_tag("/projects", method: :get, class: 'form_search') do %>
       <%= collection_select :category_id, :id, Category.order(:name), :id, :name, include_blank: true %>
       <%= text_field_tag :name %>

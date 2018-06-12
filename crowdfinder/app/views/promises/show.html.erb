@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <p>
   <strong>Project:</strong>
   <%= @promise.project_id %>
@@ -18,11 +19,15 @@
   <%= @promise.is_default %>
 </p>
 
-<p>
+  <p>
   <strong>Level:</strong>
   <%= @promise.level %>
 </p>
 
 <%= button_to 'Fund', funders_fund_path, {params1: @promise.id, params2: current_user.id, method: :post} %>
 
+  <br>
+
 <%= button_to 'Back', project_path(@promise.project_id), method: :get %>
+
+</div>
