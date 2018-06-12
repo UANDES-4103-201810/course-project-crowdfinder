@@ -16,16 +16,18 @@
     <%= form.text_field :name %>
   </div>
 
-  <div></div>
-
-  <div class="field">
-    <%= form.label :creator %><br/>
-    <%= form.collection_select :creator, User.order(:username), :id, :username, include_blank: false %>
-  </div>
+  <% if current_user.is_admin %>
+    <div class="field">
+      <%= form.label :creator %><br/>
+      <%= form.collection_select :creator,  User.order('username ASC'), :id, :username, include_blank: false %>
+    </div>
+  <% else %>
+    <%= form.hidden_field :creator, value: current_user.id %>
+  <% end %>
 
   <div class="field">
     <%= form.label :category_id %><br/>
-    <%= form.collection_select :category_id, Category.order(:name), :id, :name, include_blank: true %>
+    <%= form.collection_select :category_id, Category.order(:name), :id, :name, include_blank: false %>
   </div>
 
   <div class="field">
@@ -36,11 +38,6 @@
   <div class="field">
     <%= form.label :finale_date %><br/>
     <%= form.datetime_select :finale_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :rating %><br/>
-    <%= form.number_field :rating %>
   </div>
 
   <div class="field">
