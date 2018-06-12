@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
   <header style="background-color:powderblue;">
-      <nav class="w3-bar w3-black" >
-        <a href="/" title="Home"> <%= image_tag 'logo.png', :style => 'width: 50px;' %> </a>
-        <a href="/projects" class="btn btn-default">Projects</a>
-        <a href="#contact" class="btn btn-default">Contact</a>
-        <div class="pull-right">
+    <nav class="navbar navbar-default" >
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li><a href="/" title="Home"> <%= image_tag 'logo.png', :style => 'width: 30px;' %> </a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-            <%= link_to('' , '/users/' + current_user.id.to_s, class: "glyphicon glyphicon-user", title: "Profile") %>
-            <%= current_user.username %>
+            <li><%= link_to(current_user.username, '/users/' + current_user.id.to_s) %></li>
             <% if current_user.is_admin %>
-              <a href="/users" class="btn btn-default">Users</a>
-              <a href="/categories" class="btn btn-default">Categories</a>
+              <li><a href="/users">Users</a></li>
+              <li><a href="/categories">Categories</a></li>
             <% end %>
-            <%= link_to('Logout', destroy_user_session_path, class: "btn btn-default", method: :delete) %>
+            <li><a <%= link_to('Logout', destroy_user_session_path, method: :delete) %></a></li>
           <% else %>
-            <%= link_to('Login', class: "btn btn-default", data_toggle: "modal", data_target: "#exampleModal") %>
+            <li><%= link_to('Login', data_toggle: "modal", data_target: "#exampleModal") %></li>
           <% end %>
-        </div>
-
-      </nav>
+        </ul>
+      </div>
+    </nav>
     <title>Crowdfinder</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
