@@ -12,28 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :project_id %>
-    <%= form.number_field :project_id %>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %><br>
   </div>
 
   <div class="field">
-    <%= form.label :merch %>
-    <%= form.number_field :merch %>
+    <%= form.label :project_id %><br>
+    <%= form.number_field :project_id %><br>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
+    <%= form.label :merch %><br>
+    <%= form.number_field :merch %><br>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %><br>
+    <%= form.number_field :price %><br>
   </div>
 
   <div class="field">
     <%= form.label :is_default %>
-    <%= form.check_box :is_default %>
-  </div>
-
-  <div class="field">
-    <%= form.label :level %>
-    <%= form.number_field :level %>
+    <%= form.check_box :is_default %><br>
   </div>
 
   <div class="actions">

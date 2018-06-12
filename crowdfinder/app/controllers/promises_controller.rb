@@ -53,7 +53,7 @@ class PromisesController < ApplicationController
     if current_user.is_admin or Project.find(@promise.project_id).creator == current_user.id
       respond_to do |format|
         if @promise.update(promise_params)
-          format.html { redirect_to @promise, notice: 'Promise was successfully updated.' }
+          format.html { redirect_to project_promises_path, notice: 'Promise was successfully updated.' }
           format.json { render :show, status: :ok, location: @promise }
         else
           format.html { render :edit }
@@ -89,6 +89,6 @@ class PromisesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def promise_params
-      params.require(:promise).permit(:project_id, :merch, :price, :is_default, :level)
+      params.require(:promise).permit(:name, :project_id, :merch, :price, :is_default, :level)
     end
 end

@@ -5,7 +5,7 @@ class CreatePromises < ActiveRecord::Migration[5.2]
       t.integer :merch
       t.integer :price
       t.boolean :is_default
-      t.integer :level
+      t.string :name
 
       t.timestamps
     end
