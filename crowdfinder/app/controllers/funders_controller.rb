@@ -4,13 +4,12 @@ class FundersController < ApplicationController
   end
 
   def create
-    @funder = Funder.new(project_params)
+    @funder = Funder.new(funder_params)
 
     respond_to do |format|
       if @funder.save
         UserMailer.with(funder: @funder).fund_email.deliver_later
         @user
-        @promise = Promise.new(is_default: true)
         format.html { redirect_to @funder, notice: 'Project was successfully funded.' }
         format.json { render :show, status: :created, location: @funder }
       else
@@ -38,4 +37,21 @@ class FundersController < ApplicationController
 
   def destroy
   end
+
+  def fund
+    @funder = Funder.new(:promise_id => params[:params1], :user_id => params[:params2])
+    if @funder.save
+      UserMailer.with(funder: @funder).fund_email.deliver_later
+      @user
+      format.html { redirect_to @funder, notice: 'Project was successfully funded.' }
+      format.json { render :show, status: :created, location: @funder }
+    else
+      format.json { render json: @funder.errors, notice: 'Project was not funded.' }
+    end
+  end
+
+  def funder_params
+    params.require(:funder).permit(:promise_id, :user_id)
+  end
+
 end

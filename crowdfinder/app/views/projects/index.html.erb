@@ -47,12 +47,12 @@
       height: 50px;
     }
   </style>
-  <table>
+  <table class="table">
     <thead>
     <tr>
+      <th>Photo</th>
       <th>Name</th>
       <th>Creator</th>
-      <th>Description</th>
       <th colspan="300"></th>
     </tr>
     </thead>
@@ -60,10 +60,9 @@
     <tbody>
     <% @projects.each do |project| %>
       <tr>
+        <td><%= image_tag project.photo.url(:thumb) %></td>
         <td><%= link_to project.name, project %></td>
         <td><%= project.creator %></td>
-        <td><%= project.description %></td>
-        <td><%= image_tag project.photo.url(:thumb) %></td>
         <% if current_user.is_admin %>
           <td><%= link_to 'Edit', edit_project_path(project) %></td>
           <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>

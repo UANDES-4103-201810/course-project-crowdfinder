@@ -83,7 +83,7 @@ class UsersController < ApplicationController
   end
 
   def show_funded
-    
+
   end
 
   private

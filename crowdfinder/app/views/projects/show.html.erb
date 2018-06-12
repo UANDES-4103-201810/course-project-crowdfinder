@@ -3,10 +3,10 @@
 </div>
 
 <div class="container">
-  <div class="col-sm-6">
-    <%= image_tag @project.photo.url %>
+  <div class="col-sm-4">
+    <%= image_tag @project.photo.url, size: 200 %>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-4">
     <strong>Creator:</strong>
     <%= @project.creator %>
     <br>
@@ -15,18 +15,16 @@
     <br>
     <strong>Description:</strong>
     <br>
-    <%= @project.description %>
+    <%= markdown(@project.description) %>
     <br>
     <br>
-
-    <%= link_to 'Fund', '/',class: "btn btn-success" %>
 
     <% if current_user.is_admin %>
-      <%= link_to 'Edit', edit_project_path(@project),class: "btn btn-default" %>
+      <%= link_to 'Edit', edit_project_path(@project), class: "btn btn-default" %>
     <% end %>
     <br>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-4">
     <strong>Goal:</strong>
     <%= @project.goal %>
     <br>
@@ -36,4 +34,47 @@
     <strong>Finale date:</strong>
     <%= @project.finale_date %>
   </div>
+</div>
+
+<div class="col-sm-3">
+</div>
+
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th {
+    height: 50px;
+  }
+</style>
+<div class="col-sm-6">
+
+  <h2>Promises:</h2>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Promise</th>
+      <th>Price</th>
+      <th>Level</th>
+      <th colspan="300"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+      <% @project.promises.each do |promise| %>
+        <tr>
+          <td><%= promise.id %></td>
+          <td><%= promise.price %></td>
+          <td><%= promise.level %></td>
+          <td><%= link_to 'Show', project_promise_path(@project,promise), class: "btn btn-default" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="col-sm-3">
 </div>

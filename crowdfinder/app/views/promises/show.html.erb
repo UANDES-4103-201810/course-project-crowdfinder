@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Project:</strong>
   <%= @promise.project_id %>
@@ -25,4 +23,7 @@
   <%= @promise.level %>
 </p>
 
-<%= link_to 'Back', project_promises_path %>
+<%= button_to 'Fund', funders_fund_path, {params1: @promise.id, params2: current_user.id, method: :post} %>
+
+<%= button_to 'Back', project_promises_path %>
+

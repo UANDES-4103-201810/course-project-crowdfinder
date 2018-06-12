@@ -1,2 +1,22 @@
-<h1>Funders#index</h1>
-<p>Find me in app/views/funders/index.html.erb</p>
+<h1>Funders</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Promise</th>
+    <th>User</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @funders.each do |funder| %>
+    <tr>
+      <td><%= funder.promise_id %></td>
+      <td><%= funder.user_id %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
