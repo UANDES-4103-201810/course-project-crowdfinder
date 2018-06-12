@@ -16,4 +16,12 @@ class Project < ApplicationRecord
       errors.add(:finale_date, "Project must end in the future")
     end
   end
+
+  def self.search(name)
+    if name
+      where('name LIKE ?', "%#{name}%").order('name ASC')
+    else
+      order('name ASC')
+    end
+  end
 end
