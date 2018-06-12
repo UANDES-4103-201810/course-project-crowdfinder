@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.search(params[:name])
+    @projects = Project.search(params[:name], params[:category_id])
   end
 
   # GET /projects/1
