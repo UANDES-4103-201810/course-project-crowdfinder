@@ -42,15 +42,12 @@ class FundersController < ApplicationController
     @funders = Funder.all
     @funder = Funder.new(:promise_id => params[:params1], :user_id => params[:params2])
 
-    respond_to do |format|
-      if @funder.save
+    if @funder.save
         UserMailer.with(funder: @funder).fund_email.deliver_later
         @user
-        format.html { redirect_to @funder, notice: 'Project was successfully funded.' }
-        format.json { render :show, status: :created, location: @funder }
+        flash.now[:success] = 'Project was successfully Funded!'
       else
-        format.json { render "index", :alert => 'Alert message!' }
-      end
+        flash.now[:success] = 'Funding Failed.'
     end
   end
 
