@@ -9,6 +9,8 @@ class Project < ApplicationRecord
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
 
   validates :name, length: {minimum: 3}, allow_blank: false
+  validates :description, length: {minimum: 20}, allow_blank: false
+  validates :creator, allow_blank: false, allow_nil: false
   validate :date_future
 
   def date_future
