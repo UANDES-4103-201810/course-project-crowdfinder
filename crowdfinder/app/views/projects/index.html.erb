@@ -13,7 +13,7 @@
   <div class="row">
     <%= form_tag("/projects", method: :get, class: 'form_search') do %>
       <%= collection_select :category_id, :id, Category.order(:name), :id, :name, include_blank: true %>
-      <%= text_field_tag :name, params[:name] %>
+      <%= text_field_tag :name %>
       <%= submit_tag 'Search', name: nil %>
     <% end %>
     <br/>
