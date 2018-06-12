@@ -11,7 +11,8 @@
 
 <div class="container">
   <div class="row">
-    <%= form_tag("/projects", method: :get) do %>
+    <%= form_tag("/projects", method: :get, class: 'form_search') do %>
+      <%= collection_select :category_id, :id, Category.order(:name), :id, :name, include_blank: true %>
       <%= text_field_tag :name, params[:name] %>
       <%= submit_tag 'Search', name: nil %>
     <% end %>
@@ -35,6 +36,7 @@
       <th>Photo</th>
       <th>Name</th>
       <th>Creator</th>
+      <th>Category</th>
       <th colspan="300"></th>
     </tr>
     </thead>
@@ -45,8 +47,7 @@
         <td><%= image_tag project.photo.url(:thumb) %></td>
         <td><%= link_to project.name, project %></td>
         <td><%= link_to("@" + User.find(project.creator).username, User.find(project.creator)) %></td>
-        <td><%= project.description %></td>
-        <td><%= image_tag project.photo.url(:thumb) %></td>
+        <td><%= Category.find(project.category_id).name %></td>
         <% if current_user.is_admin %>
           <td><%= link_to 'Edit', edit_project_path(project) %></td>
           <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
