@@ -39,7 +39,9 @@ class FundersController < ApplicationController
   end
 
   def fund
+    @funders = Funder.all
     @funder = Funder.new(:promise_id => params[:params1], :user_id => params[:params2])
+
     respond_to do |format|
       if @funder.save
         UserMailer.with(funder: @funder).fund_email.deliver_later
@@ -47,7 +49,7 @@ class FundersController < ApplicationController
         format.html { redirect_to @funder, notice: 'Project was successfully funded.' }
         format.json { render :show, status: :created, location: @funder }
       else
-        render "index", :alert => 'Alert message!'
+        format.json { render "index", :alert => 'Alert message!' }
       end
     end
   end
