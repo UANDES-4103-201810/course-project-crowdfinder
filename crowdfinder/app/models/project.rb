@@ -18,11 +18,13 @@ class Project < ApplicationRecord
   end
 
   def self.search(name, category)
-    if name and name != ""  
+    if name and name != ""
       if category
-        where('name LIKE ?', "%#{name}%").where('category_id = ?', "#{category[:id]}").order('name ASC')
-      else
-        where('name LIKE ?', "%#{name}%").order('name ASC')
+        if category[:id] != ""
+          where('name LIKE ?', "%#{name}%").where('category_id = ?', "#{category[:id]}").where('description LIKE ?', "%#{name}%").order('name ASC')
+        else
+          where('name LIKE ?', "%#{name}%").or(where('description LIKE ?', "%#{name}%")).order('name ASC')
+        end
       end
     else
       if category
