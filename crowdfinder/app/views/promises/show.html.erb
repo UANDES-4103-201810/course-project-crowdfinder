@@ -24,7 +24,7 @@
   <%= @promise.level %>
 </p>
 
-<%= button_to 'Fund', funders_fund_path, {params1: @promise.id, params2: current_user.id, method: :post} %>
+<%= button_to('Fund', funders_fund_path(@promise), method: :post ) %>
 
   <br>
 

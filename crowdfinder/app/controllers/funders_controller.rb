@@ -39,20 +39,23 @@ class FundersController < ApplicationController
   end
 
   def fund
-    @funders = Funder.all
-    @funder = Funder.new(:promise_id => params[:params1], :user_id => params[:params2])
+    p params
+    @funder = Funder.new(user_id: current_user.id, promise_id: @promise.id)
 
+    p @funder
     if @funder.save
+      p "save meeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
       UserMailer.with(funder: @funder).fund_email.deliver_later
       @user
       flash.now[:success] = 'Project was successfully Funded!'
     else
-      flash.now[:danger] = 'Funding Failed.'
+      p "i died"
+      flash.now[:notice] = 'Funding Failed.'
     end
   end
 
   def funder_params
-    params.require(:funder).permit(:promise_id, :user_id)
+    params.require(:promise).permit(:id)
   end
 
 end
