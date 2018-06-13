@@ -13,15 +13,13 @@ the option to chose the project's creator from all the users will be available. 
 option to chose the creator won't appear and the creator will be set to the user logged in. The project created can
 upload a project's picture, must have a name and a goal. 
 
+Search: Projects can be searched by key words in the name and description. The search can be filtered by Category.
+
 Promise: Can be created by the creator of a project
 
-User: Have a log in/log out, can be created by admin or be promoted to admin by admin.
+User: Have a log in/log out, and omniouth implemented but not fully functional.
 
-Wish: Norhing yet.
-
-Omniauth: Implemented.
-
-Mailer: Says in console it sends the email, but no email is received.
+Mailer: Console shows a sent email, but no email is received.
 
 Feedback: On every user action a feedback message is displayed with red yellow or green background according to 
 circumstances.
