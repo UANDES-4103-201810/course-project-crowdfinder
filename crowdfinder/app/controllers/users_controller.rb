@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
       respond_to do |format|
         if @user.save
-          format.html { redirect_to @user, flash[:success] = 'User was successfully created.', notice: 'User was successfully created.'}
+          format.html { redirect_to @user, notice: 'User was successfully created.'}
           format.json { render :show, status: :created, location: @user }
         else
           format.html { render :new }
@@ -74,8 +74,9 @@ class UsersController < ApplicationController
     if current_user.is_admin
       @user.destroy
       respond_to do |format|
-        format.html { redirect_to users_url, flash[:success] = 'User was successfully destroyed.', notice: 'User was successfully destroyed.' }
+        format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
         format.json { head :no_content }
+        flash.now[:success] = 'User Deleted!'
       end
     else
       redirect_to(home_index_path)

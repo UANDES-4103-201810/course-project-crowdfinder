@@ -57,8 +57,8 @@
     <thead>
     <tr>
       <th>Promise</th>
+      <th>Merch</th>
       <th>Price</th>
-      <th>Level</th>
       <th colspan="300"></th>
     </tr>
     </thead>
@@ -66,9 +66,9 @@
     <tbody>
       <% @project.promises.each do |promise| %>
         <tr>
-          <td><%= promise.id %></td>
+          <td><%= promise.name %></td>
+          <td><%= promise.merch %></td>
           <td><%= promise.price %></td>
-          <td><%= promise.level %></td>
           <td><%= link_to 'Show', project_promise_path(@project,promise), class: "btn btn-default" %></td>
         </tr>
       <% end %>

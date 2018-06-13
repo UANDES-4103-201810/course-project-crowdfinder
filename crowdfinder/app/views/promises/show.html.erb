@@ -1,6 +1,7 @@
+<div class="container-fluid">
 <p>
   <strong>Project:</strong>
-  <%= @promise.project_id %>
+  <%= Project.find(@promise.project_id).name %>
 </p>
 
 <p>
@@ -18,11 +19,14 @@
   <%= @promise.is_default %>
 </p>
 
-<p>
-  <strong>Level:</strong>
-  <%= @promise.level %>
-</p>
+<%= form_for( :funder, url: '/projects/' +  @promise.project_id.to_s + '/promises/' + @promise.id.to_s + '/funders', method: :post) do %>
+  <%= hidden_field_tag :promise_id, value: @promise.id %>
+  <%= hidden_field_tag :user_id, current_user.id %>
+  <%= submit_tag 'Fund', name: nil %>
+<% end %>
 
-<%= button_to 'Fund', funders_fund_path, {params1: @promise.id, params2: current_user.id, method: :post} %>
+  <br>
 
-<%= button_to 'Back', project_promises_path %>
+<%= button_to 'Back', project_path(@promise.project_id), method: :get %>
+
+</div>

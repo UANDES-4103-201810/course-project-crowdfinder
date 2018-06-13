@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {:omniauth_callbacks => "callbacks"}
 
-  devise_for :users
   resources :users
   resources :projects do
     resources :promises do
@@ -11,9 +11,6 @@ Rails.application.routes.draw do
   resources :merchs
   resources :wishes
 
-  post "/users/create", to: "users#create"
-
-  post "funders/fund"
   get "home/index"
   root "home#index"
 end
