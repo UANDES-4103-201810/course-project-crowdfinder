@@ -10,7 +10,6 @@ class Project < ApplicationRecord
 
   validates :name, length: {minimum: 3}, allow_blank: false
   validates :description, length: {minimum: 20}, allow_blank: false
-  validates :creator, allow_blank: false, allow_nil: false
   validate :date_future
 
   def date_future
