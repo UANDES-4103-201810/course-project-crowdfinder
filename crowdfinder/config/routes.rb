@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :merchs
   resources :wishes
 
+  post "/users/create", to: "users#create"
+
   post "funders/fund"
   get "home/index"
   root "home#index"
