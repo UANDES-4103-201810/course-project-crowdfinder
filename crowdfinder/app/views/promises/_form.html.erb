@@ -17,11 +17,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :project_id %><br>
-    <%= form.number_field :project_id %><br>
-  </div>
-
-  <div class="field">
     <%= form.label :merch %><br>
     <%= form.number_field :merch %><br>
   </div>
@@ -35,6 +30,8 @@
     <%= form.label :is_default %>
     <%= form.check_box :is_default %><br>
   </div>
+
+  <%= form.hidden_field :project_id, value: @project.id %>
 
   <div class="actions">
     <%= form.submit %>
