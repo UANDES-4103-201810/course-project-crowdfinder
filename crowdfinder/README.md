@@ -19,7 +19,12 @@ User: Have a log in/log out, can be created by admin or be promoted to admin by 
 
 Wish: Norhing yet.
 
-Omniauth: implemented.
+Omniauth: Implemented.
+
+Mailer: Says in console it sends the email, but no email is received.
+
+Feedback: On every user action a feedback message is displayed with red yellow or green background according to 
+circumstances.
 
 Extra Gems: 
 gem 'bootstrap-sass', '~> 3.2.0'
