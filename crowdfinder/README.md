@@ -18,6 +18,7 @@ Search: Projects can be searched by key words in the name and description. The s
 Promise: Can be created by the creator of a project
 
 User: Have a log in/log out, and omniouth implemented but not fully functional.
+Shows funded promises.
 
 Mailer: Console shows a sent email, but no email is received.
 
