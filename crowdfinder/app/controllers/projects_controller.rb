@@ -34,11 +34,13 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.save
         @promise = Promise.new(is_default: true)
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
+        format.html { redirect_to @project}
         format.json { render :show, status: :created, location: @project }
+        flash[:success] = 'Project was successfully created.'
       else
         format.html { render :new }
         format.json { render json: @project.errors, status: :unprocessable_entity }
+        flash[:danger] = 'Project was not created.'
       end
     end
   end
@@ -48,11 +50,13 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+        format.html { redirect_to @project }
         format.json { render :show, status: :ok, location: @project }
+        flash[:success] = 'Project was successfully updated.'
       else
         format.html { render :edit }
         format.json { render json: @project.errors, status: :unprocessable_entity }
+        flash[:success] = 'Project was not updated.'
       end
     end
   end
@@ -62,8 +66,9 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
+      format.html { redirect_to projects_url }
       format.json { head :no_content }
+      flash[:warning] = 'Project was successfully destroyed.'
     end
   end
 

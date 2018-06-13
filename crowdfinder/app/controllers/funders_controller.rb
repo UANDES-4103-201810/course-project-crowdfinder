@@ -4,19 +4,19 @@ class FundersController < ApplicationController
   end
 
   def create
-    p params
     @funder = Funder.new(funder_params)
 
-    p @funder
     respond_to do |format|
       if @funder.save
         UserMailer.with(funder: @funder).fund_email.deliver_later
         @user
-        format.html { redirect_to project_promise_path, notice: 'Project was successfully funded.' }
+        format.html { redirect_to project_promise_path }
         format.json { render :show, status: :created, location: @funder }
+        flash[:success] = 'Promise was successfully funded.'
       else
         format.html { render :new }
         format.json { render json: @funder.errors, status: :unprocessable_entity }
+        flash[:danger] = 'Promise was not funded.'
       end
     end
   end

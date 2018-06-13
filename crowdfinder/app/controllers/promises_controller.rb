@@ -35,11 +35,13 @@ class PromisesController < ApplicationController
 
       respond_to do |format|
         if @promise.save
-          format.html { redirect_to project_promises_path, notice: 'Promise was successfully created.' }
+          format.html { redirect_to project_promises_path }
           format.json { render :show, status: :created, location: @promise }
+          flash[:success] = 'Promise was successfully created.'
         else
           format.html { render :new }
           format.json { render json: @promise.errors, status: :unprocessable_entity }
+          flash[:danger] = 'Promise was not created.'
         end
       end
     else
@@ -53,11 +55,13 @@ class PromisesController < ApplicationController
     if current_user.is_admin or Project.find(@promise.project_id).creator == current_user.id
       respond_to do |format|
         if @promise.update(promise_params)
-          format.html { redirect_to project_promises_path, notice: 'Promise was successfully updated.' }
+          format.html { redirect_to project_promises_path }
           format.json { render :show, status: :ok, location: @promise }
+          flash[:success] = 'Promise was successfully updated.'
         else
           format.html { render :edit }
           format.json { render json: @promise.errors, status: :unprocessable_entity }
+          flash[:danger] = 'Promise was not updated.'
         end
       end
     else
@@ -73,8 +77,9 @@ class PromisesController < ApplicationController
     if current_user.is_admin or Project.find(@promise.project_id).creator == current_user.id
       @promise.destroy
       respond_to do |format|
-        format.html { redirect_to project_promises_path, notice: 'Promise was successfully destroyed.' }
+        format.html { redirect_to project_promises_path}
         format.json { head :no_content }
+        flash[:warning] = 'Promise was successfully destroyed.'
       end
     else
       redirect_to(home_index_path)
