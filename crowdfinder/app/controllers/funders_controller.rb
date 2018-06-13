@@ -10,7 +10,7 @@ class FundersController < ApplicationController
       if @funder.save
         UserMailer.with(funder: @funder).fund_email.deliver_later
         @user
-        format.html { redirect_to project_promise_path }
+        format.html { redirect_to '/' }
         format.json { render :show, status: :created, location: @funder }
         flash[:success] = 'Promise was successfully funded.'
       else
