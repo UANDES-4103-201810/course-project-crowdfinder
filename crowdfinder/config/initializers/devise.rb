@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -9,6 +10,10 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '6b2c543adc57021e0072a2dbe2f539a8bec3332870ca3fb341e94ae8acf92c64a502c4d7aa0a7564d4062ceaf54b57a18bfd3b5c3f15be344ed774be0dac2b14'
+
+
+  config.mailer_sender="findcrowd@gmail.com"
+  config.omniauth :facebook, "2082616332027226", "02aaca688624166dfc3cb2965281432e"
   
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -18,8 +23,6 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender="findcrowd@gmail.com"
-  config.omniauth :facebook, "2082616332027226", "02aaca688624166dfc3cb2965281432e"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'

@@ -13,11 +13,11 @@ User.create(username: "Rabi",
             password: "password123",
             is_admin: "true")
 
-User.create(username: "S2Global",
-            first_name: "Francisco",
-            last_name: "Alvarez",
-            email: "fcoalvarez91@gmail.com",
-            password: "s2global123",
+User.create(username: "Mechero",
+            first_name: "Mech",
+            last_name: "Mecheroth",
+            email: "mech@mech.mech",
+            password: "mechero123",
             is_admin: "true")
 
 User.create(username: "Monty",

@@ -1,2 +1,5 @@
-<h1>Wishes#new</h1>
-<p>Find me in app/views/wishes/new.html.erb</p>
+<h1>New Wish</h1>
+
+<%= render 'form', wish: @wish %>
+
+<%= link_to 'Back', wishes_path %>

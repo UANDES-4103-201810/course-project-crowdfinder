@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_25_233737) do
+ActiveRecord::Schema.define(version: 2018_06_14_223850) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -27,9 +27,12 @@ ActiveRecord::Schema.define(version: 2018_05_25_233737) do
   end
 
   create_table "merches", force: :cascade do |t|
+    t.string "name"
     t.string "description"
+    t.integer "promise_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["promise_id"], name: "index_merches_on_promise_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -84,9 +87,10 @@ ActiveRecord::Schema.define(version: 2018_05_25_233737) do
   create_table "wishes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "project_id"
-    t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_wishes_on_project_id"
+    t.index ["user_id"], name: "index_wishes_on_user_id"
   end
 
 end
