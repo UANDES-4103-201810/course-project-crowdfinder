@@ -10,7 +10,9 @@ Rails.application.routes.draw do
       resources :funders
     end
   end
-
+  resources :users do
+    resources :wishes
+  end
   resources :projects do
     resources :promises do
       resources :merches

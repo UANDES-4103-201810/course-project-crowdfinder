@@ -25,10 +25,11 @@ class WishesController < ApplicationController
   # POST /wishes.json
   def create
     @wish = Wish.new(wish_params)
-
+    @project = Project.where('id = ?', "#{@wish.project_id}")
+    p params
     respond_to do |format|
       if @wish.save
-        format.html { redirect_to @wish, notice: 'Wish was successfully created.' }
+        format.html { redirect_to '/users/' +  current_user.id.to_s + '/wishes/', notice: 'Wish was successfully created.' }
         format.json { render :show, status: :created, location: @wish }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class WishesController < ApplicationController
   def update
     respond_to do |format|
       if @wish.update(wish_params)
-        format.html { redirect_to @wish, notice: 'Wish was successfully updated.' }
+        format.html { redirect_to '/users/' +  current_user.id.to_s + '/wishes/', notice: 'Wish was successfully updated.' }
         format.json { render :show, status: :ok, location: @wish }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class WishesController < ApplicationController
   def destroy
     @wish.destroy
     respond_to do |format|
-      format.html { redirect_to wishes_url, notice: 'Wish was successfully destroyed.' }
+      format.html { redirect_to '/users/' +  current_user.id.to_s + '/wishes/', notice: 'Wish was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +70,6 @@ class WishesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wish_params
-      params.require(:wish).permit(:user_id, :project_id)
+      params.permit(:user_id, :project_id)
     end
 end

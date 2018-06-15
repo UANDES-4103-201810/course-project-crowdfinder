@@ -6,11 +6,11 @@
         <ul class="nav navbar-nav">
           <li><a href="/" title="Home"> <%= image_tag 'logo.png', :style => 'width: 30px;' %> </a></li>
           <li><a href="/projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
             <li><%= link_to(current_user.username, '/users/' + current_user.id.to_s) %></li>
+            <li><%= link_to('Wishlist', '/users/' + current_user.id.to_s + '/wishes') %></li>
             <% if current_user.is_admin %>
               <li><a href="/users">Users</a></li>
               <li><a href="/categories">Categories</a></li>

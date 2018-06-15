@@ -1,4 +1,4 @@
-<%= form_with(model: merch, local: true) do |form| %>
+<%= form_for([@merch, @promise]) do |form| %>
   <% if merch.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(merch.errors.count, "error") %> prohibited this merch from being saved:</h2>
@@ -21,10 +21,7 @@
     <%= form.text_field :description %>
   </div>
 
-  <div class="field">
-    <%= form.label :promise_id %>
-    <%= form.text_field :promise_id %>
-  </div>
+    <%= form.hidden_field :promise_id, value: @promise.id %>
 
   <div class="actions">
     <%= form.submit %>
