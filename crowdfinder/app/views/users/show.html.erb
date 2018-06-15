@@ -1,55 +1,69 @@
 <div class="jumbotron text-center">
   <h1><%= @user.username %></h1>
+  <h3>Name:</h3>
+  <%= @user.first_name + " " + @user.last_name %>
+  <br>
+  <h3>Email:</h3>
+  <%= @user.email %>
 </div>
+
 
 <div class="container-fluid">
-<p>
-  <strong>Name:</strong>
-  <%= @user.first_name + " " + @user.last_name %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
 
-<style>
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-
-  th {
-    height: 50px;
-  }
-</style>
-<div class="col-sm-6">
-
-  <h2>Promises Funded:</h2>
-
-  <table class="table">
-    <thead>
-    <tr>
-      <th>Promise</th>
-      <th>Merch</th>
-      <th>Price</th>
-      <th colspan="300"></th>
-    </tr>
-    </thead>
-
-    <tbody>
-    <% @funders.each do |funder| %>
+    th {
+      height: 50px;
+    }
+  </style>
+  <div class="col-sm-5">
+    <h2>Promises Funded:</h2>
+    <table class="table">
+      <thead>
       <tr>
-        <td><%= Promise.find(funder.promise_id).name %></td>
-        <td><%= Promise.find(funder.promise_id).merch %></td>
-        <td><%= Promise.find(funder.promise_id).price %></td>
+        <th>Promise</th>
+        <th>Price</th>
+        <th colspan="300"></th>
       </tr>
-    <% end %>
-    </tbody>
-  </table>
-</div>
+      </thead>
 
-<br>
-<%= link_to 'Edit', '/users/edit/'%> |
-<%= link_to 'Back', users_path %>
+      <tbody>
+      <% @funders.each do |funder| %>
+        <tr>
+          <td><%= Promise.find(funder.promise_id).name %></td>
+          <td><%= Promise.find(funder.promise_id).price %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-sm-5">
+    <h2>Projects Created:</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Promise</th>
+        <th>Category</th>
+        <th colspan="300"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @projects.each do |project| %>
+        <tr>
+          <td><%= project.name %></td>
+          <td><%= project.category.name %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+  <%= link_to 'Edit', '/users/edit/'%>
 </div>

@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @funders = Funder.where('user_id = ?',"#{@user.id}")
+    @projects = Project.where('creator = ?',"#{@user.id}")
   end
 
   # GET /users/new
