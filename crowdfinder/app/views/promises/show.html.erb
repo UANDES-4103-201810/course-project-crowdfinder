@@ -1,3 +1,7 @@
+<div class="jumbotron text-center">
+  <h1><%= @promise.name %></h1>
+</div>
+
 <div class="container-fluid">
 <p>
   <strong>Project:</strong>
@@ -5,8 +9,13 @@
 </p>
 
 <p>
-  <strong>Merch:</strong>
-  <div class="container-fluid">
+  <strong>Price:</strong>
+  <%= @promise.price %>
+</p>
+
+  <p>
+  <div class="col-sm-4">
+    <strong>Merch:</strong>
     <style>
       table {
         border-collapse: collapse;
@@ -37,27 +46,19 @@
       <% end %>
       </tbody>
     </table>
+
+
+
+    <%= form_for( :funder, url: '/projects/' +  @promise.project_id.to_s + '/promises/' + @promise.id.to_s + '/funders', method: :post) do %>
+      <%= hidden_field_tag :promise_id, value: @promise.id %>
+      <%= hidden_field_tag :user_id, current_user.id %>
+      <%= submit_tag 'Fund', name: nil %>
+    <% end %>
+
+    <br>
+
+    <%= button_to 'Back', project_path(@promise.project_id), method: :get %>
   </div>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @promise.price %>
-</p>
-
-<p>
-  <strong>Is default:</strong>
-  <%= @promise.is_default %>
-</p>
-
-<%= form_for( :funder, url: '/projects/' +  @promise.project_id.to_s + '/promises/' + @promise.id.to_s + '/funders', method: :post) do %>
-  <%= hidden_field_tag :promise_id, value: @promise.id %>
-  <%= hidden_field_tag :user_id, current_user.id %>
-  <%= submit_tag 'Fund', name: nil %>
-<% end %>
-
-  <br>
-
-<%= button_to 'Back', project_path(@promise.project_id), method: :get %>
+  </p>
 
 </div>
